@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160603125719) do
+ActiveRecord::Schema.define(version: 20160606102232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,19 @@ ActiveRecord::Schema.define(version: 20160603125719) do
 
   add_index "short_stories", ["author_id"], name: "index_short_stories_on_author_id", using: :btree
 
+  create_table "taggings", force: :cascade do |t|
+    t.string   "taggable_type"
+    t.integer  "taggable_id"
+    t.integer  "tag_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+  add_index "taggings", ["taggable_id"], name: "index_taggings_on_taggable_id", using: :btree
+
   create_table "tags", force: :cascade do |t|
+    t.string   "name"
     t.integer  "author_id"
     t.integer  "poem_id"
     t.integer  "short_story_id"
@@ -61,6 +73,7 @@ ActiveRecord::Schema.define(version: 20160603125719) do
 
   add_foreign_key "poems", "authors"
   add_foreign_key "short_stories", "authors"
+  add_foreign_key "taggings", "tags"
   add_foreign_key "tags", "authors"
   add_foreign_key "tags", "poems"
   add_foreign_key "tags", "short_stories"
