@@ -6,7 +6,7 @@
 <%= render poems %>
 
 
-<h2><%= link_to 'Short stories', short_stories_path %></h2>
+<h2>Short stories</h2>
 <% short_stories = @author.short_stories.order(:title) %>
 
 <%= render short_stories %>

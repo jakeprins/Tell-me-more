@@ -4,6 +4,6 @@ class ShortStoriesController < ApplicationController
   end
 
   def show
-    @short_stories = ShortStory.find(params[:id])
+    @short_story = ShortStory.find(params[:id])
   end
 end
