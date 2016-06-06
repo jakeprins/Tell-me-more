@@ -4,7 +4,7 @@
 <ul><p><%= @poem.content %></p></ul>
 <ul><p><%= @poem.tags %></p></ul>
 
-<strong> Tags: </strong>
- <%= @poem.tags.each do |tag| %>
-  <span><%= link_to "##{tag.name}", tag %>
-    <%end%>
+<Strong> Tags: </strong>
+<% tags = @poem.tags.order(:name) %>
+
+<%= render tags %>

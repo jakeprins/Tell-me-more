@@ -11,3 +11,8 @@
 <% short_stories = @author.short_stories.order(:title) %>
 
 <%= render short_stories %>
+
+<Strong> Tags: </strong>
+<% tags = @author.tags.order(:name) %>
+
+<%= render tags %>
