@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160603125719) do
   add_index "short_stories", ["author_id"], name: "index_short_stories_on_author_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
+    t.string   "name"
     t.integer  "author_id"
     t.integer  "poem_id"
     t.integer  "short_story_id"
