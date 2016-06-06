@@ -1,27 +1,38 @@
-<h1><%= @author.name %></h1>
-<ul><%= @author.bio %></ul>
+<div class="row">
+  <div class="col-md-6">
+    <h1><%= @author.name %></h1>
+    <hr>
+    <ul><Strong> Bio: </strong></ul>
+    <ul><%= @author.bio %></ul>
 
-<% tags = @author.tags.order(:name) %>
+    <% tags = @author.tags.order(:name) %>
 
-<Strong> Tags: </strong>
-<%= render tags %>
+    <ul><Strong> Tags: </strong></ul>
+    <ul><%= render tags %></ul>
 
+  </div>
+</div>
 
-<h2>Poems</h2>
-<% poems = @author.poems.order(:title) %>
+<div class="row">
+  <div class="col-md-6">
+    <h2>Poems</h2>
+    <% poems = @author.poems.order(:title) %>
 
-<% poems.each do |poem| %>
-  <ul><h2><%= link_to poem.title, poem_path(poem) %></h2></ul>
-  <ul><p><%= poem.published_date %></p></ul>
-  <ul><p><%= poem.metaphore %></p></ul>
-<%end%>
+    <% poems.each do |poem| %>
+      <ul><h3><%= link_to poem.title, poem_path(poem) %></h2></ul>
+      <ul><p><%= poem.published_date %></p></ul>
+      <ul><p><%= poem.metaphore %></p></ul>
+    <%end%>
+  </div>
 
+  <div class="col-md-6">
+    <h2>Short stories</h2>
+    <% short_stories = @author.short_stories.order(:title) %>
 
-<h2>Short stories</h2>
-<% short_stories = @author.short_stories.order(:title) %>
-
-<% short_stories.each do |short_story| %>
-  <ul><h2><%= link_to short_story.title, short_story_path(short_story)%></h2></ul>
-  <ul><p><%= short_story.published_date %></p></ul>
-  <ul><p><%= short_story.short_description %></p></ul>
-<%end%>
+    <% short_stories.each do |short_story| %>
+      <ul><h3><%= link_to short_story.title, short_story_path(short_story)%></h3></ul>
+      <ul><p><%= short_story.published_date %></p></ul>
+      <ul><p><%= short_story.short_description %></p></ul>
+    <%end%>
+  </div>
+</div>

@@ -1,9 +1,11 @@
 <ul><h2><%=@short_story.title %></h2></ul>
-<ul><p><%= @short_story.published_date %></p></ul>
-<ul><p><%= @short_story.short_description %></p></ul>
+<ul><p>Published date: <%= @short_story.published_date %></p></ul>
+<ul><p>Short description: <%= @short_story.short_description %></p></ul>
+
+<hr>
 <ul><p><%= @short_story.content %></p></ul>
+<hr>
 
 <% tags = @short_story.tags.order(:name) %>
-
-<Strong> Tags: </strong>
-<%= render tags %>
+<ul><Strong> Tags: </strong></ul>
+<ul><%= render tags %></ul>
