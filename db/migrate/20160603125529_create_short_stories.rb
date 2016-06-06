@@ -5,7 +5,7 @@ class CreateShortStories < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.text :short_description
-      t.string :published_date
+      t.date :published_date
 
       t.timestamps null: false
     end

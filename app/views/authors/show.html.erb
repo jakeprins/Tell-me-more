@@ -1,0 +1,12 @@
+<h1><%= @author.name %></h1>
+<ul><%= @author.bio %></ul>
+
+<h2>Poems</h2>
+<% poems = @author.poems.order(:title) %>
+<%= render poems %>
+
+
+<h2><%= link_to 'Short stories', short_stories_path %></h2>
+<% short_stories = @author.short_stories.order(:title) %>
+
+<%= render short_stories %>

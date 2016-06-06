@@ -5,7 +5,7 @@ class CreatePoems < ActiveRecord::Migration
       t.string :title
       t.text :content
       t.text :metaphore
-      t.string :published_date
+      t.date :published_date
 
       t.timestamps null: false
     end
