@@ -85,9 +85,6 @@ Tag.create!(name: 'beer')
 
 puts "Seeded #{Tag.count} tags."
 
-tester = Tag.create!(name: 'test')
 
 
-jan.tags << tester
-
-puts "#{jan.tags} is working"
+Poem.first.tags.create(author_id: 1, name: "SuperTag!")
