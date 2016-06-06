@@ -1,5 +1,5 @@
 jan = Author.create( name: "Jan", bio: "Just as boring as his bio" )
-piet = Author.create( name: "Pier", bio: "Born in China, adopted by Russians, live in the UK but is named after an unknown Dutch guy." )
+piet = Author.create( name: "Piet", bio: "Born in China, adopted by Russians, live in the UK but is named after an unknown Dutch guy." )
 henk = Author.create( name: "Henk", bio: "Henk loves to write poems, but his writing skilss doesn't pay the bills so in the weekends he's a awesome bartender. " )
 
 puts "Seeded #{Author.count} authors."
@@ -69,19 +69,27 @@ As he slowly unbuttoned his gloves, there passed through Trysdale's mind a swift
 
 puts "Seeded #{ShortStory.count} short stories."
 
-Tag.create!(name: 'music')
-Tag.create!(name: 'woman')
+Tag.create!(name: 'impatience')
+Tag.create!(name: 'girl')
 Tag.create!(name: 'love')
-Tag.create!(name: 'sky')
-Tag.create!(name: 'clouds')
+Tag.create!(name: 'blues')
+Tag.create!(name: 'adopted')
 Tag.create!(name: 'family')
-Tag.create!(name: 'plants')
+Tag.create!(name: 'gloves')
+Tag.create!(name: 'dark')
 Tag.create!(name: 'drinks')
-Tag.create!(name: 'adventure')
+Tag.create!(name: 'writing')
 Tag.create!(name: 'life')
-Tag.create!(name: 'wisdom')
+Tag.create!(name: 'wise')
 Tag.create!(name: 'friend')
 Tag.create!(name: 'beer')
+Tag.create!(name: 'boring')
+Tag.create!(name: 'poems')
+Tag.create!(name: 'bartender')
+Tag.create!(name: 'trust')
+
+
+
 
 puts "Seeded #{Tag.count} tags."
 

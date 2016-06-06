@@ -2,9 +2,8 @@
 <ul><p><%= @poem.published_date %></p></ul>
 <ul><p><%= @poem.metaphore %></p></ul>
 <ul><p><%= @poem.content %></p></ul>
-<ul><p><%= @poem.tags %></p></ul>
 
-<Strong> Tags: </strong>
 <% tags = @poem.tags.order(:name) %>
 
+<Strong> Tags: </strong>
 <%= render tags %>

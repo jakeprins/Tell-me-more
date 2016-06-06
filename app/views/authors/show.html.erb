@@ -1,18 +1,27 @@
 <h1><%= @author.name %></h1>
 <ul><%= @author.bio %></ul>
 
+<% tags = @author.tags.order(:name) %>
+
+<Strong> Tags: </strong>
+<%= render tags %>
+
 
 <h2>Poems</h2>
 <% poems = @author.poems.order(:title) %>
-<%= render poems %>
+
+<% poems.each do |poem| %>
+  <ul><h2><%= link_to poem.title, poem_path(poem) %></h2></ul>
+  <ul><p><%= poem.published_date %></p></ul>
+  <ul><p><%= poem.metaphore %></p></ul>
+<%end%>
 
 
 <h2>Short stories</h2>
 <% short_stories = @author.short_stories.order(:title) %>
 
-<%= render short_stories %>
-
-<Strong> Tags: </strong>
-<% tags = @author.tags.order(:name) %>
-
-<%= render tags %>
+<% short_stories.each do |short_story| %>
+  <ul><h2><%= link_to short_story.title, short_story_path(short_story)%></h2></ul>
+  <ul><p><%= short_story.published_date %></p></ul>
+  <ul><p><%= short_story.short_description %></p></ul>
+<%end%>

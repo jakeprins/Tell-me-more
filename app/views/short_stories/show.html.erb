@@ -3,7 +3,7 @@
 <ul><p><%= @short_story.short_description %></p></ul>
 <ul><p><%= @short_story.content %></p></ul>
 
-<Strong> Tags: </strong>
 <% tags = @short_story.tags.order(:name) %>
 
+<Strong> Tags: </strong>
 <%= render tags %>
