@@ -84,3 +84,10 @@ Tag.create!(name: 'friend')
 Tag.create!(name: 'beer')
 
 puts "Seeded #{Tag.count} tags."
+
+tester = Tag.create!(name: 'test')
+
+
+jan.tags << tester
+
+puts "#{jan.tags} is working"

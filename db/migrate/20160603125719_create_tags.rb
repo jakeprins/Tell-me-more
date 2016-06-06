@@ -3,10 +3,6 @@ class CreateTags < ActiveRecord::Migration
     create_table :tags do |t|
       t.string :name
 
-      t.references :author, index: true, foreign_key: true
-      t.references :poem, index: true, foreign_key: true
-      t.references :short_story, index: true, foreign_key: true
-
       t.timestamps null: false
     end
   end

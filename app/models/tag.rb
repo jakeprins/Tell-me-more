@@ -1,3 +1,3 @@
 class Tag < ActiveRecord::Base
-  belongs_to :taggeble, polymorphic: true
+  has_many :taggings
 end
