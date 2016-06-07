@@ -1,1 +1,25 @@
 <ul><h2><%=@tag.name %></h2></ul>
+<hr>
+<div class="row">
+  <div class="col-md-4">
+    <% authors = @tag.authors.order(:name) %>
+
+    <ul><Strong> Authors with #<%=@tag.name %>:</strong></ul>
+    <ul><%= render authors %></ul>
+
+  </div>
+  <div class="col-md-4">
+    <% poems = @tag.poems.order(:title) %>
+
+    <ul><Strong> Poems with #<%=@tag.name %>: </strong></ul>
+    <ul><%= render poems %></ul>
+
+  </div>
+  <div class="col-md-4">
+    <% short_stories = @tag.short_stories.order(:title) %>
+
+    <ul><Strong>Short stories with #<%=@tag.name %>: </strong></ul>
+    <ul><%= render short_stories %></ul>
+
+  </div>
+</div>
