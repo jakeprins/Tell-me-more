@@ -1,4 +1,5 @@
 <ul><h2><%=@short_story.title %></h2></ul>
+<ul><p>Author: <%= link_to @short_story.author.name, author_path(@short_story.author) %></p></ul>
 <ul><p>Published date: <%= @short_story.published_date %></p></ul>
 <ul><p>Short description: <%= @short_story.short_description %></p></ul>
 
